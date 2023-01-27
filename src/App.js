@@ -15,7 +15,7 @@ export default function App() {
     axios
       .post(baseURL, {
         title: "Hello World!",
-        body: "This is a new post",
+        body: "This is a new Post",
       })
       .then((response) => {
         setPost(response.data);
