@@ -11,11 +11,22 @@ export default function App() {
     });
   }, []);
 
-  function createPost() {
+  // function createPost() {
+  //   axios
+  //     .post(baseURL, {
+  //       title: "Hello World!",
+  //       body: "This is a new Post",
+  //     })
+  //     .then((response) => {
+  //       setPost(response.data);
+  //     });
+  // }
+
+  function updatePost() {
     axios
-      .post(baseURL, {
+      .put(`${baseURL}` / 1, {
         title: "Hello World!",
-        body: "This is a new Post",
+        body: "This is an update post",
       })
       .then((response) => {
         setPost(response.data);
@@ -28,7 +39,7 @@ export default function App() {
     <div>
       <h1>{post.title}</h1>
       <p>{post.body}</p>
-      <button onClick={createPost}>Create Post</button>
+      <button onClick={updatePost}>Update Post</button>
     </div>
   );
 }
